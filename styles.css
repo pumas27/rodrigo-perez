@@ -1,0 +1,1880 @@
+/* =======================================================
+   RODRIGO PÉREZ
+   Film Scoring | Composer | Music Supervisor
+   styles.css
+   PARTE 1 - Base General + Home
+======================================================= */
+
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: Georgia, "Times New Roman", serif;
+    background:#d9d9d9;
+    color:#111;
+    overflow-x:hidden;
+    animation:fadePage .8s ease;
+}
+
+/* ==========================
+   VARIABLES
+========================== */
+
+:root{
+
+    --gris:#d9d9d9;
+    --gris-claro:#eeeeee;
+    --gris-oscuro:#444;
+
+    --negro:#111111;
+
+    --ambar:#c89b3c;
+    --ambar-hover:#ddb75c;
+
+    --blanco:#ffffff;
+
+    --shadow:0 15px 40px rgba(0,0,0,.12);
+
+    --radius:10px;
+
+}
+
+/* ==========================
+   FONDO GENERAL
+========================== */
+
+body{
+
+    background:
+        radial-gradient(circle at top,#efefef,#d8d8d8);
+
+}
+
+/* ==========================
+   ANIMACIONES
+========================== */
+
+@keyframes fadePage{
+
+    from{
+
+        opacity:0;
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes zoomVideo{
+
+    from{
+
+        transform:translate(-50%,-50%) scale(1);
+
+    }
+
+    to{
+
+        transform:translate(-50%,-50%) scale(1.08);
+
+    }
+
+}
+
+/* ==========================
+   VIDEO DE FONDO
+========================== */
+
+.bg-video{
+
+    position:fixed;
+
+    top:50%;
+    left:50%;
+
+    min-width:100%;
+    min-height:100%;
+
+    width:auto;
+    height:auto;
+
+    transform:translate(-50%,-50%);
+
+    object-fit:cover;
+
+    z-index:-5;
+
+    animation:zoomVideo 25s ease-in-out infinite alternate;
+
+}
+
+/* ==========================
+   OVERLAY
+========================== */
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            rgba(20,20,20,.45),
+            rgba(10,10,10,.60)
+        );
+
+    z-index:-4;
+
+}
+
+/* ==========================
+   HOME
+========================== */
+
+.hero{
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+    padding-left:8%;
+
+    position:relative;
+
+}
+
+.hero-content{
+
+    color:white;
+
+    animation:fadeUp 1.2s;
+
+    max-width:700px;
+
+}
+
+.hero-content h1{
+
+    font-size:80px;
+
+    font-weight:300;
+
+    letter-spacing:2px;
+
+}
+
+.hero-content h2{
+
+    margin-top:15px;
+
+    font-style:italic;
+
+    font-size:38px;
+
+    color:var(--ambar);
+
+    font-weight:400;
+
+}
+
+.hero-content p{
+
+    margin-top:20px;
+
+    font-size:22px;
+
+    letter-spacing:1px;
+
+    color:#e5e5e5;
+
+}
+
+/* ==========================
+   MENÚ HOME
+========================== */
+
+.menu{
+
+    position:absolute;
+
+    bottom:50px;
+
+    right:60px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    animation:fadeUp 1.5s;
+
+}
+
+.menu a{
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:24px;
+
+    position:relative;
+
+    width:fit-content;
+
+    transition:.3s;
+
+}
+
+.menu a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--ambar);
+
+    transition:.35s;
+
+}
+
+.menu a:hover{
+
+    color:var(--ambar);
+
+}
+
+.menu a:hover::after{
+
+    width:100%;
+
+}
+
+/* ==========================
+   HEADER INTERNO
+========================== */
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:30px 8%;
+
+    background:rgba(255,255,255,.65);
+
+    backdrop-filter:blur(8px);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+}
+
+.logo{
+
+    text-decoration:none;
+
+    color:var(--negro);
+
+    font-size:30px;
+
+    letter-spacing:1px;
+
+}
+
+.topbar nav{
+
+    display:flex;
+
+    gap:30px;
+
+}
+
+.topbar nav a{
+
+    text-decoration:none;
+
+    color:var(--negro);
+
+    font-size:17px;
+
+    position:relative;
+
+}
+
+.topbar nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--ambar);
+
+    transition:.35s;
+
+}
+
+.topbar nav a:hover{
+
+    color:var(--ambar);
+
+}
+
+.topbar nav a:hover::after{
+
+    width:100%;
+
+}
+
+/* ==========================
+   PÁGINAS
+========================== */
+
+.page{
+
+    width:min(1200px,90%);
+
+    margin:auto;
+
+    padding:70px 0 100px;
+
+}
+
+.page h1{
+
+    font-size:56px;
+
+    margin-bottom:55px;
+
+    color:var(--negro);
+
+    font-weight:300;
+
+}
+
+.page h2{
+
+    color:var(--ambar);
+
+    font-weight:400;
+
+    margin-bottom:20px;
+
+}
+
+.page p{
+
+    line-height:1.9;
+
+    font-size:18px;
+
+}
+
+/* ==========================
+   TARJETAS
+========================== */
+
+.card{
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    padding:35px;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+/* ==========================
+   BOTONES
+========================== */
+
+.btn{
+
+    display:inline-block;
+
+    margin-top:25px;
+
+    padding:12px 30px;
+
+    border:2px solid var(--ambar);
+
+    color:var(--ambar);
+
+    text-decoration:none;
+
+    transition:.35s;
+
+    letter-spacing:1px;
+
+}
+
+.btn:hover{
+
+    background:var(--ambar);
+
+    color:white;
+
+}
+
+/* ==========================
+   IMÁGENES
+========================== */
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+
+    text-align:center;
+
+    padding:50px;
+
+    color:#666;
+
+    font-size:15px;
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:900px){
+
+.hero{
+
+padding:40px;
+
+}
+
+.hero-content h1{
+
+font-size:52px;
+
+}
+
+.hero-content h2{
+
+font-size:28px;
+
+}
+
+.hero-content p{
+
+font-size:18px;
+
+}
+
+.menu{
+
+right:30px;
+
+bottom:30px;
+
+}
+
+.menu a{
+
+font-size:20px;
+
+}
+
+.topbar{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.topbar nav{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.page h1{
+
+font-size:42px;
+
+}
+
+}
+
+/* =======================================================
+   PARTE 2 - CONOCE
+======================================================= */
+
+/* ==========================
+   CONTENEDOR GENERAL
+========================== */
+
+.bio-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    gap:35px;
+
+}
+
+/* ==========================
+   TARJETAS
+========================== */
+
+.bio-card{
+
+    background:rgba(255,255,255,.85);
+
+    backdrop-filter:blur(6px);
+
+    border-left:5px solid var(--ambar);
+
+    border-radius:12px;
+
+    padding:35px;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.bio-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.bio-card h2{
+
+    font-size:30px;
+
+    color:var(--ambar);
+
+    margin-bottom:20px;
+
+    font-weight:400;
+
+}
+
+.bio-card p{
+
+    text-align:justify;
+
+    color:#333;
+
+    line-height:1.9;
+
+}
+
+/* ==========================
+   LISTAS
+========================== */
+
+.bio-card ul{
+
+    list-style:none;
+
+    margin-top:15px;
+
+}
+
+.bio-card li{
+
+    position:relative;
+
+    padding-left:28px;
+
+    margin-bottom:15px;
+
+    line-height:1.8;
+
+    color:#333;
+
+}
+
+.bio-card li::before{
+
+    content:"●";
+
+    position:absolute;
+
+    left:0;
+
+    color:var(--ambar);
+
+    font-size:15px;
+
+}
+
+/* ==========================
+   EDUCACIÓN
+========================== */
+
+.educacion{
+
+    display:grid;
+
+    gap:18px;
+
+}
+
+.educacion-item{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:8px;
+
+    border-left:4px solid var(--ambar);
+
+}
+
+/* ==========================
+   ESPECIALIDADES
+========================== */
+
+.skills-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:20px;
+
+    margin-top:20px;
+
+}
+
+.skill{
+
+    background:white;
+
+    padding:22px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    transition:.35s;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.05);
+
+}
+
+.skill:hover{
+
+    background:var(--ambar);
+
+    color:white;
+
+    transform:translateY(-5px);
+
+}
+
+.skill h3{
+
+    font-weight:400;
+
+    margin-bottom:10px;
+
+}
+
+/* ==========================
+   TIMELINE EXPERIENCIA
+========================== */
+
+.timeline{
+
+    position:relative;
+
+    margin-top:20px;
+
+    padding-left:35px;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:9px;
+
+    top:0;
+
+    width:2px;
+
+    height:100%;
+
+    background:var(--ambar);
+
+}
+
+.timeline-item{
+
+    position:relative;
+
+    margin-bottom:35px;
+
+}
+
+.timeline-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-31px;
+
+    top:7px;
+
+    width:16px;
+
+    height:16px;
+
+    border-radius:50%;
+
+    background:var(--ambar);
+
+}
+
+.timeline-item h3{
+
+    color:var(--ambar);
+
+    font-weight:400;
+
+    margin-bottom:8px;
+
+    font-size:22px;
+
+}
+
+.timeline-item span{
+
+    display:block;
+
+    color:#666;
+
+    margin-bottom:12px;
+
+    font-size:15px;
+
+}
+
+.timeline-item p{
+
+    color:#333;
+
+}
+
+/* ==========================
+   MUSIC BUSINESS
+========================== */
+
+.business-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+
+    margin-top:25px;
+
+}
+
+.business-card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:10px;
+
+    border-top:4px solid var(--ambar);
+
+    transition:.3s;
+
+}
+
+.business-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.business-card h3{
+
+    margin-bottom:15px;
+
+    color:var(--ambar);
+
+    font-weight:400;
+
+}
+
+/* ==========================
+   SUPERVISIÓN MUSICAL
+========================== */
+
+.supervision{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:25px;
+
+    margin-top:20px;
+
+}
+
+.supervision-card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:12px;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.supervision-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.supervision-card h3{
+
+    color:var(--ambar);
+
+    margin-bottom:12px;
+
+    font-weight:400;
+
+}
+
+.supervision-card p{
+
+    font-size:16px;
+
+    color:#444;
+
+}
+
+/* ==========================
+   FRASE DESTACADA
+========================== */
+
+.quote{
+
+    text-align:center;
+
+    font-size:28px;
+
+    font-style:italic;
+
+    color:var(--ambar);
+
+    margin:70px 0;
+
+    line-height:1.6;
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:900px){
+
+.skills-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.business-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.supervision{
+
+grid-template-columns:1fr;
+
+}
+
+.timeline{
+
+padding-left:25px;
+
+}
+
+}
+
+/* =======================================================
+   PARTE 3 - MÚSICA
+======================================================= */
+
+/* ==========================
+   TÍTULOS DE SECCIÓN
+========================== */
+
+.media-block{
+
+    margin-bottom:80px;
+
+}
+
+.media-block h2{
+
+    font-size:34px;
+
+    color:var(--ambar);
+
+    font-weight:400;
+
+    margin-bottom:35px;
+
+    letter-spacing:1px;
+
+    position:relative;
+
+}
+
+.media-block h2::after{
+
+    content:"";
+
+    display:block;
+
+    width:80px;
+
+    height:3px;
+
+    margin-top:10px;
+
+    background:var(--ambar);
+
+}
+
+/* ==========================
+   AUDIOS
+========================== */
+
+.audio-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.audio-card{
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:25px 30px;
+
+    box-shadow:var(--shadow);
+
+    border-left:5px solid var(--ambar);
+
+    transition:.35s;
+
+}
+
+.audio-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.audio-card h3{
+
+    color:var(--negro);
+
+    font-weight:400;
+
+    font-size:22px;
+
+    margin-bottom:18px;
+
+    letter-spacing:.5px;
+
+}
+
+/* Reproductor */
+
+.audio-card audio{
+
+    width:100%;
+
+    height:45px;
+
+}
+
+/* Texto descriptivo opcional */
+
+.audio-card p{
+
+    margin-top:12px;
+
+    color:#666;
+
+    font-size:15px;
+
+}
+
+/* ==========================
+   GALERÍA
+========================== */
+
+.gallery-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:25px;
+
+}
+
+.gallery-item{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:12px;
+
+    box-shadow:var(--shadow);
+
+    cursor:pointer;
+
+}
+
+.gallery-item img{
+
+    width:100%;
+
+    height:300px;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+    filter:grayscale(100%);
+
+}
+
+/* Hover */
+
+.gallery-item:hover img{
+
+    transform:scale(1.08);
+
+    filter:grayscale(0%);
+
+}
+
+/* Overlay */
+
+.gallery-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+        transparent,
+
+        rgba(0,0,0,.75)
+
+    );
+
+    display:flex;
+
+    align-items:flex-end;
+
+    padding:20px;
+
+    opacity:0;
+
+    transition:.35s;
+
+}
+
+.gallery-item:hover .gallery-overlay{
+
+    opacity:1;
+
+}
+
+.gallery-overlay h3{
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:400;
+
+}
+
+/* ==========================
+   FOTO DESTACADA
+========================== */
+
+.feature-photo{
+
+    width:100%;
+
+    margin:60px 0;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+
+}
+
+.feature-photo img{
+
+    width:100%;
+
+    max-height:600px;
+
+    object-fit:cover;
+
+}
+
+/* ==========================
+   CITA
+========================== */
+
+.music-quote{
+
+    text-align:center;
+
+    margin:70px auto;
+
+    max-width:900px;
+
+}
+
+.music-quote p{
+
+    font-size:28px;
+
+    color:var(--ambar);
+
+    font-style:italic;
+
+    line-height:1.7;
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:900px){
+
+.audio-card{
+
+padding:20px;
+
+}
+
+.audio-card h3{
+
+font-size:20px;
+
+}
+
+.gallery-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.gallery-item img{
+
+height:240px;
+
+}
+
+.music-quote p{
+
+font-size:22px;
+
+}
+
+}
+
+/* =======================================================
+   PARTE 4 - PROYECTOS
+=======================================================*/
+
+.projects-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(350px,1fr));
+
+gap:35px;
+
+margin-top:40px;
+
+}
+
+.project-card{
+
+background:white;
+
+border-radius:15px;
+
+overflow:hidden;
+
+box-shadow:var(--shadow);
+
+transition:.4s;
+
+}
+
+.project-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.project-image{
+
+height:240px;
+
+overflow:hidden;
+
+}
+
+.project-image img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+transition:.5s;
+
+}
+
+.project-card:hover img{
+
+transform:scale(1.05);
+
+}
+
+.project-content{
+
+padding:30px;
+
+}
+
+.project-content h2{
+
+font-size:24px;
+
+margin-bottom:10px;
+
+color:var(--ambar);
+
+}
+
+.project-meta{
+
+display:flex;
+
+gap:15px;
+
+margin-bottom:20px;
+
+font-size:14px;
+
+color:#666;
+
+}
+
+.project-content p{
+
+line-height:1.8;
+
+margin-bottom:20px;
+
+}
+
+.project-btn{
+
+display:inline-block;
+
+padding:12px 25px;
+
+border:1px solid var(--ambar);
+
+text-decoration:none;
+
+color:var(--ambar);
+
+transition:.3s;
+
+}
+
+.project-btn:hover{
+
+background:var(--ambar);
+
+color:white;
+
+}
+
+
+/* =======================================================
+   PARTE 5 - CONTACTO
+=======================================================*/
+
+.contact-grid{
+
+display:grid;
+
+gap:30px;
+
+max-width:900px;
+
+}
+
+.contact-card{
+
+background:white;
+
+padding:30px;
+
+border-radius:12px;
+
+box-shadow:var(--shadow);
+
+transition:.4s;
+
+}
+
+.contact-card:hover{
+
+transform:translateY(-5px);
+
+}
+
+.contact-card span{
+
+display:block;
+
+font-size:13px;
+
+letter-spacing:2px;
+
+color:#666;
+
+text-transform:uppercase;
+
+margin-bottom:10px;
+
+}
+
+.contact-card p{
+
+font-size:22px;
+
+position:relative;
+
+display:inline-block;
+
+}
+
+.contact-card p::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-5px;
+
+width:0;
+
+height:2px;
+
+background:var(--ambar);
+
+transition:.4s;
+
+}
+
+.contact-card:hover p::after{
+
+width:100%;
+
+}
+
+.contact-link{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+margin-top:18px;
+
+padding:12px 25px;
+
+border:1px solid var(--ambar);
+
+text-decoration:none;
+
+color:var(--ambar);
+
+transition:.3s;
+
+}
+
+.contact-link:hover{
+
+background:var(--ambar);
+
+color:white;
+
+}
+
+.icon{
+
+font-size:18px;
+
+transition:.3s;
+
+}
+
+.contact-link:hover .icon{
+
+transform:translateX(4px);
+
+}
+
+/* =======================================================
+   FOOTER
+=======================================================*/
+
+footer{
+
+margin-top:100px;
+
+padding:40px;
+
+text-align:center;
+
+background:#111;
+
+color:#ddd;
+
+}
+
+footer p{
+
+font-size:14px;
+
+letter-spacing:1px;
+
+}
+
+footer span{
+
+color:var(--ambar);
+
+}
+
+/* =======================================================
+   RESPONSIVE
+=======================================================*/
+
+@media(max-width:900px){
+
+.projects-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.contact-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.hero-content{
+
+left:8%;
+
+top:35%;
+
+}
+
+.hero-content h1{
+
+font-size:52px;
+
+}
+
+.hero-content h2{
+
+font-size:28px;
+
+}
+
+.hero-content p{
+
+font-size:18px;
+
+}
+
+.menu{
+
+bottom:35px;
+
+right:35px;
+
+}
+
+.menu a{
+
+font-size:22px;
+
+}
+
+.page h1{
+
+font-size:42px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.hero-content h1{
+
+font-size:38px;
+
+}
+
+.hero-content h2{
+
+font-size:22px;
+
+}
+
+.hero-content p{
+
+font-size:16px;
+
+}
+
+.menu{
+
+gap:10px;
+
+}
+
+.menu a{
+
+font-size:18px;
+
+}
+
+}
+
+/* =====================================================
+CONTACTO
+===================================================== */
+
+.contact-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(320px,1fr));
+
+gap:30px;
+
+margin-top:40px;
+
+}
+
+
+.contact-card{
+
+background:white;
+
+padding:35px;
+
+border-radius:12px;
+
+box-shadow:var(--shadow);
+
+transition:.35s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+.contact-card:hover{
+
+transform:translateY(-6px);
+
+}
+
+
+.contact-card span{
+
+display:block;
+
+font-size:13px;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+color:#666;
+
+margin-bottom:12px;
+
+}
+
+
+.contact-card p{
+
+font-size:22px;
+
+margin-bottom:20px;
+
+position:relative;
+
+display:inline-block;
+
+}
+
+
+.contact-card p::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-6px;
+
+width:0;
+
+height:2px;
+
+background:var(--ambar);
+
+transition:.4s;
+
+}
+
+
+.contact-card:hover p::after{
+
+width:100%;
+
+}
+
+
+.contact-link{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:12px;
+
+padding:12px 24px;
+
+border:1px solid var(--ambar);
+
+text-decoration:none;
+
+color:var(--ambar);
+
+transition:.3s;
+
+}
+
+
+.contact-link:hover{
+
+background:var(--ambar);
+
+color:white;
+
+}
+
+
+.icon{
+
+font-size:18px;
+
+transition:.35s;
+
+}
+
+
+.contact-link:hover .icon{
+
+transform:translateX(5px);
+
+}
+
+
+.fa-instagram{
+
+color:#E4405F;
+
+}
+
+
+.fa-whatsapp{
+
+color:#25D366;
+
+}
+
+
+.fa-envelope{
+
+color:#d14836;
+
+}
+
+
+.fa-phone{
+
+color:var(--ambar);
+
+}
